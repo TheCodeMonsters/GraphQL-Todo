@@ -1,0 +1,10 @@
+query FetchTodos {
+  todos {
+    title
+    description
+    deadline
+    createdBy {
+      name
+    }
+  }
+}

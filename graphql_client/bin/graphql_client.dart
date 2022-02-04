@@ -1,10 +1,15 @@
 import 'package:graphql_client/graphql_client.dart';
 
+import 'constants.dart';
+import 'graphql_todos.dart';
+
 void main(List<String> args) {
+  todos();
+
   // final continentsReq = GFetchCon==tinentsReq();
   final usersReq = GFetchUsersReq();
 
-  final user = initClient('http://localhost:4000/');
+  final user = initClient(graphqlURL);
 
   // client.request(continentsReq).listen((response) {
   user.request(usersReq).listen((response) {

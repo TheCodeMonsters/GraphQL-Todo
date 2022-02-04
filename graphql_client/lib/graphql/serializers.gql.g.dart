@@ -8,12 +8,21 @@ part of 'serializers.gql.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCreateTodoInput.serializer)
+      ..add(GFetchTodosData.serializer)
+      ..add(GFetchTodosData_todos.serializer)
+      ..add(GFetchTodosData_todos_createdBy.serializer)
+      ..add(GFetchTodosReq.serializer)
+      ..add(GFetchTodosVars.serializer)
       ..add(GFetchUsersData.serializer)
       ..add(GFetchUsersData_users.serializer)
       ..add(GFetchUsersData_users_todos.serializer)
       ..add(GFetchUsersReq.serializer)
       ..add(GFetchUsersVars.serializer)
       ..add(GUpdateTodoInput.serializer)
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GFetchTodosData_todos)]),
+          () => new ListBuilder<GFetchTodosData_todos>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GFetchUsersData_users)]),
