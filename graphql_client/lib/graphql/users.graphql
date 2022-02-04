@@ -1,0 +1,11 @@
+query FetchUsers {
+  users {
+    name
+    email
+    age
+    todos {
+      title
+      description
+    }
+  }
+}
